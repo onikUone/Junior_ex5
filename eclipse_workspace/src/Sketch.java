@@ -1,31 +1,56 @@
+/*
+ * プログラミング課題5
+ * Junior_ex5
+ * */
+
 import processing.core.PApplet;
 
 public class Sketch extends PApplet{
 	int size = 700;
-
-	double[][] x;
 
 	public void settings() {
 		size(size, size);
 	}
 
 	public void setup() {
-		String path = "src/input/5_1/dtlz1Rand_4obj.dat";
-		read(path, ", ");
-		System.out.println(x[0].length);
+
+		System.out.println("-----優越関係ベース-----");
+		Domination d = new Domination(this);
+		d.domination_main();
+		System.out.println("----------------------");
+
+
+
 	}
 
-	public void read(String _path, String _separator) {
-		String[] line = loadStrings(_path);
-		int n_solution = line.length;
-		int n_objective = line[0].split(_separator).length;
-
-		this.x = new double[n_solution][n_objective];
-		for(int i = 0; i < n_solution; i++) {
-			for(int j = 0; j < n_objective; j++) {
-				this.x[i][j] = Double.parseDouble(line[i].split(_separator)[j]);
+	public boolean same(double[][] a, double[][] b) {
+		if(a.length != b.length || a[0].length != b[0].length) {
+			return false;
+		}
+		for(int i = 0; i < a.length; i++) {
+			for(int j = 0; j < a[i].length; j++) {
+				if(a[i][j] != b[i][j]) {
+					return false;
+				}
 			}
 		}
+		return true;
+	}
+
+	public double[][] read(String[] _path) {
+		double[][] x;
+		String[] line = loadStrings(_path[0]);
+		int n_solution = line.length;
+		int n_objective = line[0].split(_path[1]).length;
+
+		x = new double[n_solution][n_objective];
+		for(int i = 0; i < n_solution; i++) {
+			for(int j = 0; j < n_objective; j++) {
+				x[i][j] = Double.parseDouble(line[i].split(_path[1])[j]);
+			}
+		}
+
+		return x;
 	}
 
 	public static void main(String[] args) {
