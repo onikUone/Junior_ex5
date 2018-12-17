@@ -14,12 +14,13 @@ public class Sketch extends PApplet{
 
 	public void setup() {
 
-		System.out.println("-----優越関係ベース-----");
-		Domination d = new Domination(this);
-		d.domination_main();
-		System.out.println("----------------------");
-
-
+//		System.out.println("-----優越関係ベース-----");
+//		Domination d = new Domination(this);
+//		d.domination_main();
+//		System.out.println("----------------------");
+		
+		Scalarize s = new Scalarize(this);
+		s.scalar_main();
 
 	}
 
