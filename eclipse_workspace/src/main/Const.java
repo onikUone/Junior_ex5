@@ -23,6 +23,9 @@ public final class Const {
 	public static final String[] path_ans2func4 = {"src/input/5_2/ans2/ans2_4obj.txt", "\t"};
 	public static final String[] path_ans2func5 = {"src/input/5_2/ans2/ans2_5obj.txt", "\t"};
 
+	public static final String[] path_vec = {"src/input/5_2/ans1/vec1_2obj.txt", "\t"};
+
+
 	//5_3 Hypervolumeベースアルゴリズム
 	public static final String[] path_hyper = {"src/input/5_3/200points.dat", ", "};
 }

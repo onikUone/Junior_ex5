@@ -18,9 +18,14 @@ public class Sketch extends PApplet{
 //		Domination d = new Domination(this);
 //		d.domination_main();
 //		System.out.println("----------------------");
-		
+
 		Scalarize s = new Scalarize(this);
 		s.scalar_main();
+
+//		int a = 1;
+//		String b = String.valueOf(a);
+//		BigDecimal c = new BigDecimal(b);
+//		System.out.println(c.toString());
 
 	}
 
@@ -30,8 +35,10 @@ public class Sketch extends PApplet{
 		}
 		for(int i = 0; i < a.length; i++) {
 			for(int j = 0; j < a[i].length; j++) {
-				if(a[i][j] != b[i][j]) {
-					return false;
+				if(a[i][j] - b[i][j] > 0.0000000000000001) {
+//				if(a[i][j] != b[i][j]) {
+					System.out.println("False index : " + i);
+//					return false;
 				}
 			}
 		}
