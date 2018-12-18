@@ -34,6 +34,7 @@ public class Domination {
 		}
 	}
 
+	// 非劣な解集合をreturnする
 	public double[][] dominate(double[][] _x) {
 		int finish;
 		finish = getDominate(_x);
